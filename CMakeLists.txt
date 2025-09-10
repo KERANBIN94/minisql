@@ -18,7 +18,7 @@ include_directories(include)
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 # 将源代码添加到此项目的可执行文件。
-add_executable (minisql ${SOURCES})
+add_executable (minisql ${SOURCES} "include/minisql/sqlCompiler/LexicalError.h" "src/sqlCompiler/LexicalError.cpp" "include/minisql/sqlCompiler/Lexer.h" "src/sqlCompiler/Lexer.cpp" "include/minisql/sqlCompiler/Token.h" "include/minisql/sqlCompiler/SyntaxError.h" "src/sqlCompiler/SyntaxError.cpp" "include/minisql/sqlCompiler/Ast.h" "src/sqlCompiler/Ast.cpp" "include/minisql/sqlCompiler/Parser.h" "src/sqlCompiler/Parser.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET minisql PROPERTY CXX_STANDARD 20)
@@ -26,5 +26,5 @@ endif()
 
 # TODO: 如有需要，请添加测试并安装目标。
 
-add_executable (minisql_test tests/test.cpp ${SOURCES})
+add_executable (minisql_test tests/test.cpp ${SOURCES} "include/minisql/sqlCompiler/LexicalError.h" "src/sqlCompiler/LexicalError.cpp" "include/minisql/sqlCompiler/Lexer.h" "src/sqlCompiler/Lexer.cpp" "include/minisql/sqlCompiler/Token.h" "include/minisql/sqlCompiler/SyntaxError.h" "src/sqlCompiler/SyntaxError.cpp" "include/minisql/sqlCompiler/Ast.h" "src/sqlCompiler/Ast.cpp" "include/minisql/sqlCompiler/Parser.h" "src/sqlCompiler/Parser.cpp")
 set_property(TARGET minisql_test PROPERTY CXX_STANDARD 20)
